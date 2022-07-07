@@ -23,11 +23,13 @@
 
 @implementation IBPNSCollectionLayoutBoundarySupplementaryItem
 
++ (NSString *)originClassName { return @"NSCollectionLayoutBoundarySupplementaryItem"; }
+
 + (instancetype)boundarySupplementaryItemWithLayoutSize:(IBPNSCollectionLayoutSize *)layoutSize
                                             elementKind:(NSString *)elementKind
                                               alignment:(IBPNSRectAlignment)alignment {
     if (@available(iOS 13, *)) {
-        return [NSClassFromString(@"NSCollectionLayoutBoundarySupplementaryItem") boundarySupplementaryItemWithLayoutSize:layoutSize
+        return [NSClassFromString(self.originClassName) boundarySupplementaryItemWithLayoutSize:layoutSize
                                                                                                               elementKind:elementKind
                                                                                                                 alignment:alignment
                                                                                                            absoluteOffset:CGPointZero];
@@ -44,7 +46,7 @@
                                               alignment:(IBPNSRectAlignment)alignment
                                          absoluteOffset:(CGPoint)absoluteOffset {
     if (@available(iOS 13, *)) {
-        return [NSClassFromString(@"NSCollectionLayoutBoundarySupplementaryItem") boundarySupplementaryItemWithLayoutSize:layoutSize
+        return [NSClassFromString(self.originClassName) boundarySupplementaryItemWithLayoutSize:layoutSize
                                                                                                               elementKind:elementKind
                                                                                                                 alignment:alignment
                                                                                                            absoluteOffset:absoluteOffset];

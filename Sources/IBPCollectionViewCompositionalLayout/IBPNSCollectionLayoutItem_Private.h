@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) NSUUID *identifier;
 @property (nonatomic) BOOL hasComputedContainsEstimatedItem;
+@property (class, nonatomic, readonly) NSString *originClassName;
 
 + (instancetype)itemWithSize:(IBPNSCollectionLayoutSize *)size
              decorationItems:(NSArray<IBPNSCollectionLayoutDecorationItem *> *)decorationItems;

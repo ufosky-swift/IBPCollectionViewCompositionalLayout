@@ -3,11 +3,13 @@
 
 @implementation IBPNSCollectionLayoutSupplementaryItem
 
++ (NSString *)originClassName { return @"NSCollectionLayoutSupplementaryItem"; }
+
 + (instancetype)supplementaryItemWithLayoutSize:(IBPNSCollectionLayoutSize *)layoutSize
                                     elementKind:(NSString *)elementKind
                                 containerAnchor:(IBPNSCollectionLayoutAnchor *)containerAnchor {
     if (@available(iOS 13, *)) {
-        return [NSClassFromString(@"NSCollectionLayoutSupplementaryItem") supplementaryItemWithLayoutSize:layoutSize
+        return [NSClassFromString(self.originClassName) supplementaryItemWithLayoutSize:layoutSize
                                                                                               elementKind:elementKind
                                                                                           containerAnchor:containerAnchor];
     } else {
@@ -25,7 +27,7 @@
                                 containerAnchor:(IBPNSCollectionLayoutAnchor *)containerAnchor
                                      itemAnchor:(IBPNSCollectionLayoutAnchor *)itemAnchor {
     if (@available(iOS 13, *)) {
-        return [NSClassFromString(@"NSCollectionLayoutSupplementaryItem") supplementaryItemWithLayoutSize:layoutSize
+        return [NSClassFromString(self.originClassName) supplementaryItemWithLayoutSize:layoutSize
                                                                                               elementKind:elementKind
                                                                                           containerAnchor:containerAnchor
                                                                                                itemAnchor:itemAnchor];
